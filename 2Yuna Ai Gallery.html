@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YUNA AI 黑域展館</title>
+  <style>
+    body {
+      background: url('your-matrix-style-background.jpg') repeat;
+      color: #f5c7ff;
+      font-family: 'Noto Sans TC', sans-serif;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 2em;
+      color: #ff69b4;
+    }
+    .intro {
+      text-align: center;
+      font-size: 1rem;
+      margin: 10px 20px 40px;
+      color: #ccc;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #ff8ee8;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+    }
+    .card.locked::after {
+      content: "🔒";
+      font-size: 1.5rem;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .model-title {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .card button {
+      padding: 10px 20px;
+      background: #ff8ee8;
+      border: none;
+      border-radius: 6px;
+      color: black;
+      cursor: pointer;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: black;
+      border: 2px solid #ff69b4;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 999;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>YUNA 黑域展館</h1>
+  <div class="intro">
+    歡迎來到 YUNA 黑域展館，這是一座沉浸式二次元 AI 模型空間，每一位展出者都經過深度訓練與定製。解鎖模型後，即可啟動專屬聊天室進行互動，進入不同性格的虛擬宇宙中——這裡不只是展覽，這裡是數位靈魂的棲息地。
+  </div>
+  <div class="gallery">
+    <div class="card locked">
+      <div class="model-title">YUNA-01 模型</div>
+      <button onclick="unlockModel('01')">解鎖</button>
+    </div>
+    <div class="card locked">
+      <div class="model-title">YUNA-02 模型</div>
+      <button onclick="unlockModel('02')">解鎖</button>
+    </div>
+    <div class="card locked">
+      <div class="model-title">YUNA-03 模型</div>
+      <button onclick="unlockModel('03')">解鎖</button>
+    </div>
+    <div class="card locked">
+      <div class="model-title">YUNA-04 模型</div>
+      <button onclick="unlockModel('04')">解鎖</button>
+    </div>
+    <div class="card locked">
+      <div class="model-title">YUNA-05 模型</div>
+      <button onclick="unlockModel('05')">解鎖</button>
+    </div>
+    <div class="card locked">
+      <div class="model-title">YUNA-06 模型</div>
+      <button onclick="unlockModel('06')">解鎖</button>
+    </div>
+    <div class="card locked">
+      <div class="model-title">YUNA-07 模型</div>
+      <button onclick="unlockModel('07')">解鎖</button>
+    </div>
+  </div>
+
+  <div class="popup" id="passwordPrompt">
+    <p>輸入密碼以進入聊天室：</p>
+    <input type="password" id="modelPassword" placeholder="例如：4869"><br><br>
+    <button onclick="submitPassword()">確認</button>
+  </div>
+
+  <script>
+    function unlockModel(id) {
+      document.getElementById('passwordPrompt').style.display = 'block';
+    }
+    function submitPassword() {
+      const pw = document.getElementById('modelPassword').value;
+      if (pw === "0000") {
+        alert("密碼正確，進入聊天室...");
+        // 可接續開聊天室邏輯或跳轉
+      } else {
+        alert("密碼錯誤喔💢");
+      }
+    }
+  </script>
+</body>
+</html>
